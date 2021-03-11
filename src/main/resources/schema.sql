@@ -1,0 +1,15 @@
+DROP TABLE IF EXISTS PRICE;
+DROP TABLE IF EXISTS PRODUCT;
+
+
+CREATE TABLE PRODUCT (
+  id INT PRIMARY KEY,
+  name VARCHAR(250) NOT NULL
+);
+
+CREATE TABLE PRICE (
+  id INT,
+  price DECIMAL,
+  currency VARCHAR(10) NOT NULL,
+  foreign key (id) references PRODUCT(id)
+);
